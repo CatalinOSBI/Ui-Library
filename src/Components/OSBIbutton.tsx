@@ -6,30 +6,54 @@ interface MousePositionInterface {
   posY: number;
 }
 
-function OSBIbutton({ onClick }: { onClick: React.MouseEventHandler<HTMLButtonElement> }) {
-  const [mousePosition, setMousePosition] = useState<MousePositionInterface>({ posX: 0, posY: 0 });
-  const [buttonDynamicOpacity, setButtonDynamicOpacity] = useState<number>(1);
+interface OSBIbuttonProps {
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  buttonName: string;
+  width?: string;
+  height?: string;
+}
 
-  const handleGetMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+function OSBIbutton({ onClick, buttonName, width, height }: OSBIbuttonProps) {
+  const [mousePosition, setMousePosition] = useState<MousePositionInterface>({
+    posX: 0,
+    posY: 0,
+  });
+  const [buttonDynamicOpacity, setButtonDynamicOpacity] = useState<number>(0);
+
+  const handleGetMouseMove = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
-    const x = e.pageX - rect.left; 
-    const y = e.pageY - rect.top; 
+    const x = e.pageX - rect.left;
+    const y = e.pageY - rect.top;
     setButtonDynamicOpacity(1);
     setMousePosition({ posX: x, posY: y });
   };
 
   const dynamicStyle = {
-    left: `${mousePosition.posX-50}px`,
-    top: `${mousePosition.posY-27.5}px`,
-    opacity: `${buttonDynamicOpacity}`
-  }
+    left: `${mousePosition.posX - 50}px`,
+    top: `${mousePosition.posY - 27.5}px`,
+    opacity: `${buttonDynamicOpacity}`,
+  };
 
   return (
-    <main>
+    <>
       <div className="OSBIbuttonContainer">
-        <div onMouseMove={handleGetMouseMove} onMouseLeave={()=>setButtonDynamicOpacity(0)} className="OSBIfrostedBorder">
-          <button onClick={onClick} onMouseDown={()=>setButtonDynamicOpacity(0)} className="OSBIbutton">Button</button>
+        <div
+          onMouseMove={handleGetMouseMove}
+          onMouseLeave={() => setButtonDynamicOpacity(0)}
+          className="OSBIfrostedBorder"
+          style={{ width: width, height: height }}
+        >
+          <button
+            onClick={onClick}
+            onMouseDown={() => setButtonDynamicOpacity(0)}
+            className="OSBIbutton"
+            style={{ width: width, height: height }}
+          >
+            {buttonName}
+          </button>
         </div>
         <div style={dynamicStyle} className="OSBIglow"></div>
       </div>
@@ -38,7 +62,7 @@ function OSBIbutton({ onClick }: { onClick: React.MouseEventHandler<HTMLButtonEl
         className="imgTest"
         // src="https://png.pngtree.com/thumb_back/fh260/background/20230408/pngtree-powder-smoke-colorful-background-image_2164096.jpg"
       />
-    </main>
+    </>
   );
 }
-export default OSBIbutton
+export default OSBIbutton;

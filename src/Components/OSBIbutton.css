@@ -1,6 +1,6 @@
 .OSBIbuttonContainer{
   /* border: solid red; */
-  position: absolute;
+  position: relative;
   overflow: hidden;
 }
 
@@ -15,6 +15,7 @@
   cursor: pointer;
   transition: all .218s;
   font-family: Montserrat;
+  position: relative;
 }
 
 .OSBIbutton:active{
