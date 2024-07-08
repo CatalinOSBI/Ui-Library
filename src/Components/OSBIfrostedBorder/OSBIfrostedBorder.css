@@ -1,0 +1,26 @@
+.OSBIcontainer{
+  /* border: solid red; */
+  position: relative;
+  overflow: hidden;
+}
+
+.OSBIfrostedBorder{
+  /* border: solid 1px white; */
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.0);
+  position: relative;
+  backdrop-filter: blur(20px);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.OSBIglow{
+  width: 100px;
+  height: 55px;
+  background: radial-gradient(ellipse at center, rgb(0,255,255) 0%,rgb(0,140,255) 100%);
+  position: absolute;
+  transform: translate(20px 20px);
+  z-index: 1;
+  pointer-Events: none;
+  transition: opacity .218s ease-in-out;
+}

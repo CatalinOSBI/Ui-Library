@@ -1,0 +1,12 @@
+.OSBIcardContent{
+  width: 400px;
+  height: 600px;
+  border: none;
+  background: linear-gradient(to right, rgb(0, 20, 31) 0%, rgb(24, 39, 46) 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Montserrat;
+  position: relative;
+  box-shadow: 0px 0px 19px 4px rgb(0 0 0 / 18%);
+}
