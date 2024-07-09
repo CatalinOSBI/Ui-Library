@@ -25,8 +25,8 @@ const OSBIbutton: React.FC<OSBIbuttonProps> = ({
   buttonName,
   width,
   height,
-  glow = true,
   borderRadius,
+  glow = true,
   primColor = "rgb(24 38 45)",
   secColor = "rgb(35 56 66)",
   glowPrimColor = "rgb(0, 255, 255)",
@@ -36,9 +36,9 @@ const OSBIbutton: React.FC<OSBIbuttonProps> = ({
     <>
       <div className="OSBIbuttonContainer">
         <OSBIfrostedBorder
-          enableGlow={glow}
-          enableGlowPrimColor={glowPrimColor}
-          enableGlowSecColor={glowSecColor}
+          glow={glow}
+          glowPrimColor={glowPrimColor}
+          glowSecColor={glowSecColor}
         >
           <button
             onClick={onClick}

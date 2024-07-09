@@ -2,6 +2,7 @@ import React from "react";
 import OSBIbutton from "./Components/OSBIbutton";
 import OSBIcard from "./Components/OSBIcard";
 import OSBIicon from "./Components/OSBIicon";
+import github from "/github.svg";
 
 import "./App.css";
 
@@ -51,7 +52,12 @@ function App() {
           >
             <h2>Card Within Card</h2>
 
-            <OSBIbutton onClick={handleClick} buttonName="Accept" primColor="rgb(8, 8, 8)" secColor="rgba(22, 22, 22, 0.75)" />
+            <OSBIbutton
+              onClick={handleClick}
+              buttonName="Accept"
+              primColor="rgb(8, 8, 8)"
+              secColor="rgba(22, 22, 22, 0.75)"
+            />
           </OSBIcard>
 
           <OSBIcard
@@ -72,10 +78,27 @@ function App() {
         </OSBIcard>
       </div>
 
-    <div style={{display:'flex', gap:'2rem'}}>
-      <OSBIicon/>
-    </div>
+      <div style={{ display: "flex", gap: "2rem" }}>
+        <OSBIicon
+          iconSrc={github}
+          size="32px"
+          iconSize={32}
+          glowPrimColor="#ffffff"
+          glowSecColor="#ffffff"
+        />
 
+        <OSBIicon iconSrc={github} size="64px" iconSize={64} />
+
+        <OSBIicon
+          iconSrc={github}
+          size="64px"
+          iconSize={32}
+          primColor="#000000"
+          secColor="rgba(22, 22, 22, 0.75)"
+          glowPrimColor="#ffffff"
+          glowSecColor="#ffffff"
+        />
+      </div>
     </main>
   );
 }

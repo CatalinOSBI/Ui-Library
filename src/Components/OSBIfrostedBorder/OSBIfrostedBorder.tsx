@@ -13,16 +13,16 @@ type Color = RGB | RGBA | HEX;
 
 interface OSBIfrostedBorderProps {
   children: React.ReactNode;
-  enableGlow?: boolean | undefined;
-  enableGlowPrimColor?: Color | undefined;
-  enableGlowSecColor?: Color | undefined;
+  glow?: boolean | undefined;
+  glowPrimColor?: Color | undefined;
+  glowSecColor?: Color | undefined;
 }
 
 const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
   children,
-  enableGlow = true,
-  enableGlowPrimColor,
-  enableGlowSecColor,
+  glow = true,
+  glowPrimColor,
+  glowSecColor,
 }) => {
   const [mousePosition, setMousePosition] = useState<MousePositionInterface>({
     posX: 0,
@@ -44,8 +44,8 @@ const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
   const dynamicStyle = {
     left: `${mousePosition.posX - 50}px`,
     top: `${mousePosition.posY - 27.5}px`,
-    opacity: enableGlow ? buttonDynamicOpacity : 0,
-    background: `radial-gradient(ellipse at center, ${enableGlowPrimColor} 0%, ${enableGlowSecColor} 100%)`,
+    opacity: glow ? buttonDynamicOpacity : 0,
+    background: `radial-gradient(ellipse at center, ${glowPrimColor} 0%, ${glowSecColor} 100%)`,
   };
 
   return (

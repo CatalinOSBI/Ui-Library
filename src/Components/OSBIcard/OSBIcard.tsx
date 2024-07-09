@@ -57,9 +57,9 @@ const OSBIcard: React.FC<OSBIcard> = ({
   return (
     <div className="OSBIcard">
       <OSBIfrostedBorder
-        enableGlow={glow}
-        enableGlowPrimColor={glowPrimColor}
-        enableGlowSecColor={glowSecColor}
+        glow={glow}
+        glowPrimColor={glowPrimColor}
+        glowSecColor={glowSecColor}
       >
         <div className="OSBIcardContent" style={dynamicCardStyle}>
           {cardName}

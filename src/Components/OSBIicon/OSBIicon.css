@@ -1,5 +1,10 @@
-.OSBIicon{
-  width: 150px;
-  height: 150px;
-  background-color: black;
+.OSBIiconContent{
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to right, rgb(24 38 45) 0%, rgb(35 56 66) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
