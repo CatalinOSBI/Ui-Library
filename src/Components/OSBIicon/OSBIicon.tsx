@@ -8,13 +8,13 @@ type HEX = `#${string}`;
 type Color = RGB | RGBA | HEX;
 
 interface OSBIicon {
-  size?: string;
+  size?: React.CSSProperties["width"];
   glow?: boolean;
   glowPrimColor?: Color;
   glowSecColor?: Color;
   primColor?: string;
   secColor?: string;
-  iconSize?: number;
+  iconSize?: React.CSSProperties["width"];
   iconSrc?: string;
 }
 

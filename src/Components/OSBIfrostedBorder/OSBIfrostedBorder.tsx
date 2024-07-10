@@ -35,8 +35,8 @@ const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
   ) => {
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
-    const x = e.pageX - rect.left;
-    const y = e.pageY - rect.top;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
     setButtonDynamicOpacity(1);
     setMousePosition({ posX: x, posY: y });
   };
@@ -55,7 +55,7 @@ const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
         onMouseLeave={() => setButtonDynamicOpacity(0)}
         className="OSBIfrostedBorder"
       >
-        {children}{" "}
+        {children}
         {/* this is where the children of this FC (functional component go) */}
       </div>
       <div style={dynamicStyle} className="OSBIglow"></div>

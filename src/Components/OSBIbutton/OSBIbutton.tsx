@@ -2,7 +2,7 @@ import { useState } from "react";
 import OSBIfrostedBorder from "../OSBIfrostedBorder";
 import "./OSBIbutton.css";
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
+type RGB = `rgb(${number}, ${number}, ${number})`
 type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
 type HEX = `#${string}`;
 type Color = RGB | RGBA | HEX;
@@ -10,9 +10,9 @@ type Color = RGB | RGBA | HEX;
 interface OSBIbuttonProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   buttonName: string;
-  width?: string;
-  height?: string;
-  borderRadius?: string;
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
+  borderRadius?: React.CSSProperties["borderRadius"];
   glow?: boolean;
   primColor?: Color | undefined;
   secColor?: Color | undefined;

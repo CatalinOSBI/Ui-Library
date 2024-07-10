@@ -2,11 +2,12 @@ import React from "react";
 import OSBIbutton from "./Components/OSBIbutton";
 import OSBIcard from "./Components/OSBIcard";
 import OSBIicon from "./Components/OSBIicon";
+import OSBIloader from "./Components/OSBIloader";
 import github from "/github.svg";
 
 import "./App.css";
 
-// TODO: Loading spinner, loading component for images, icons
+// TODO: Loading spinner, loading component for images
 
 function App() {
   const handleClick = () => {
@@ -14,6 +15,7 @@ function App() {
   };
   return (
     <main>
+      Buttons
       <div style={{ display: "flex", gap: "2rem" }}>
         <OSBIbutton
           onClick={handleClick}
@@ -24,13 +26,16 @@ function App() {
         <OSBIbutton onClick={handleClick} buttonName="Button 2" />
         <OSBIbutton onClick={handleClick} buttonName="Button 3" glow={false} />
       </div>
-
+      Cards
       <div style={{ display: "flex", gap: "2rem" }}>
+        <OSBIcard display="flex" justifyContent="center">
+          <h1>Card</h1>
+        </OSBIcard>
+
         <OSBIcard
           display="flex"
           justifyContent="center"
           alignItems="center"
-          width="400px"
           flexDirection="column"
           gap="4rem"
           primColor="#000000"
@@ -77,7 +82,7 @@ function App() {
           </OSBIcard>
         </OSBIcard>
       </div>
-
+      Icons
       <div style={{ display: "flex", gap: "2rem" }}>
         <OSBIicon
           iconSrc={github}
@@ -97,6 +102,29 @@ function App() {
           secColor="rgba(22, 22, 22, 0.75)"
           glowPrimColor="#ffffff"
           glowSecColor="#ffffff"
+        />
+      </div>
+      Loaders
+      <div style={{ display: "flex", gap: "2rem" }}>
+        <OSBIloader />
+        <OSBIloader
+          width={250}
+          height={5}
+          primColor="#fcba03"
+          secColor="#fc8803"
+        />
+        <OSBIloader width={300} height={1} />
+      </div>
+      Skeleteon Component
+      <div style={{ display: "flex", gap: "2rem", flexDirection: "column" }}>
+        <img
+          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+          width={700}
+        />
+
+        <img
+          src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+          width={700}
         />
       </div>
     </main>

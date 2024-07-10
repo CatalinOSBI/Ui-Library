@@ -9,14 +9,14 @@ type Color = RGB | RGBA | HEX;
 
 interface OSBIcard {
   children: React.ReactNode;
-  cardName?: string;
-  width?: string;
-  height?: string;
+  width?: React.CSSProperties["width"];
+  height?: React.CSSProperties["height"];
   display?: React.CSSProperties["display"];
   flexDirection?: React.CSSProperties["flexDirection"];
   justifyContent?: React.CSSProperties["justifyContent"];
   alignItems?: React.CSSProperties["alignItems"];
   gap?: string;
+  cardName?: string;
   glow?: boolean;
   borderRadius?: string;
   primColor?: Color;

@@ -1,1 +1,1 @@
-export {default} from  './OSBIicon'
+export {default} from './OSBIicon'
