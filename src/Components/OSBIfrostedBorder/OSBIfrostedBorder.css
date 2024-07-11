@@ -1,4 +1,4 @@
-.OSBIcontainer{
+.OSBIcontainer, .OSBIfrostedBorderContainer{
   /* border: solid red; */
   position: relative;
   overflow: hidden;

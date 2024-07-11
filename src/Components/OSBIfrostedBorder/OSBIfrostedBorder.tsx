@@ -6,16 +6,11 @@ interface MousePositionInterface {
   posY: number;
 }
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
-type Color = RGB | RGBA | HEX;
-
 interface OSBIfrostedBorderProps {
   children: React.ReactNode;
   glow?: boolean | undefined;
-  glowPrimColor?: Color | undefined;
-  glowSecColor?: Color | undefined;
+  glowPrimColor?: React.CSSProperties["color"];
+  glowSecColor?: React.CSSProperties["color"];
 }
 
 const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
@@ -50,15 +45,17 @@ const OSBIfrostedBorder: React.FC<OSBIfrostedBorderProps> = ({
 
   return (
     <div className="OSBIcontainer">
-      <div
-        onMouseMove={handleGetMouseMove}
-        onMouseLeave={() => setButtonDynamicOpacity(0)}
-        className="OSBIfrostedBorder"
-      >
-        {children}
-        {/* this is where the children of this FC (functional component go) */}
+      <div className="OSBIfrostedBorderContainer">
+        <div
+          onMouseMove={handleGetMouseMove}
+          onMouseLeave={() => setButtonDynamicOpacity(0)}
+          className="OSBIfrostedBorder"
+        >
+          {children}
+          {/* this is where the children of this FC (functional component go) */}
+        </div>
+        <div style={dynamicStyle} className="OSBIglow"></div>
       </div>
-      <div style={dynamicStyle} className="OSBIglow"></div>
     </div>
   );
 };

@@ -1,16 +1,11 @@
 import React from "react";
 import "./OSBIloader.css";
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
-type Color = RGB | RGBA | HEX;
-
 interface OSBIloaderProps {
   width?: React.CSSProperties["width"];
   height?: React.CSSProperties["height"];
-  primColor?: Color;
-  secColor?: Color;
+  primColor?: React.CSSProperties["color"];
+  secColor?: React.CSSProperties["color"];
 }
 
 const OSBIloader: React.FC<OSBIloaderProps> = ({

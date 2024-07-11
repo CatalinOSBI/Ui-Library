@@ -3,16 +3,15 @@ import OSBIbutton from "./Components/OSBIbutton";
 import OSBIcard from "./Components/OSBIcard";
 import OSBIicon from "./Components/OSBIicon";
 import OSBIloader from "./Components/OSBIloader";
+import OSBIfrostedBorder from "./Components/OSBIfrostedBorder";
 import github from "/github.svg";
-
 import "./App.css";
-
-// TODO: Loading spinner, loading component for images
 
 function App() {
   const handleClick = () => {
     return 1;
   };
+
   return (
     <main>
       Buttons
@@ -24,7 +23,13 @@ function App() {
           glowSecColor="#1cfc03"
         />
         <OSBIbutton onClick={handleClick} buttonName="Button 2" />
-        <OSBIbutton onClick={handleClick} buttonName="Button 3" glow={false} />
+        <OSBIbutton
+          onClick={handleClick}
+          buttonName="Button 3"
+          glow={false}
+          border={true}
+          borderColor="asd"
+        />
       </div>
       Cards
       <div style={{ display: "flex", gap: "2rem" }}>
@@ -114,6 +119,40 @@ function App() {
           secColor="#fc8803"
         />
         <OSBIloader width={300} height={1} />
+      </div>
+      Frosted Border
+      <div style={{ display: "flex", gap: "2rem" }}>
+        <OSBIfrostedBorder glowPrimColor="red" glowSecColor="violet">
+          <div
+            style={{ width: "100px", height: "100px", backgroundColor: "grey" }}
+          >
+            1
+          </div>
+        </OSBIfrostedBorder>
+
+        <OSBIfrostedBorder>
+          <div
+            style={{
+              width: "150px",
+              height: "100px",
+              backgroundColor: "black",
+            }}
+          >
+            2
+          </div>
+        </OSBIfrostedBorder>
+
+        <OSBIfrostedBorder glowPrimColor="green" glowSecColor="yellow">
+          <div
+            style={{
+              width: "100px",
+              height: "200px",
+              backgroundColor: "brown",
+            }}
+          >
+            3
+          </div>
+        </OSBIfrostedBorder>
       </div>
       Skeleteon Component
       <div style={{ display: "flex", gap: "2rem", flexDirection: "column" }}>

@@ -2,16 +2,11 @@ import React from "react";
 import OSBIfrostedBorder from "../OSBIfrostedBorder";
 import "./OSBIicon.css";
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
-type Color = RGB | RGBA | HEX;
-
 interface OSBIicon {
   size?: React.CSSProperties["width"];
   glow?: boolean;
-  glowPrimColor?: Color;
-  glowSecColor?: Color;
+  glowPrimColor?: React.CSSProperties["color"];
+  glowSecColor?: React.CSSProperties["color"];
   primColor?: string;
   secColor?: string;
   iconSize?: React.CSSProperties["width"];
@@ -35,17 +30,15 @@ const OSBIicon: React.FC<OSBIicon> = ({
   };
 
   return (
-    <div className="OSBIicon">
-      <OSBIfrostedBorder
-        glow={glow}
-        glowPrimColor={glowPrimColor}
-        glowSecColor={glowSecColor}
-      >
-        <div className="OSBIiconContent" style={dynammicStyle}>
-          <img src={iconSrc} alt="Icon" width={iconSize} />
-        </div>
-      </OSBIfrostedBorder>
-    </div>
+    <OSBIfrostedBorder
+      glow={glow}
+      glowPrimColor={glowPrimColor}
+      glowSecColor={glowSecColor}
+    >
+      <div className="OSBIicon" style={dynammicStyle}>
+        <img src={iconSrc} alt="Icon" width={iconSize} />
+      </div>
+    </OSBIfrostedBorder>
   );
 };
 

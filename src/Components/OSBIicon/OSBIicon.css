@@ -1,4 +1,4 @@
-.OSBIiconContent{
+.OSBIicon{
   width: 32px;
   height: 32px;
   background: linear-gradient(to right, rgb(24 38 45) 0%, rgb(35 56 66) 100%);
@@ -7,4 +7,5 @@
   align-items: center;
   overflow: hidden;
   position: relative;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
 }

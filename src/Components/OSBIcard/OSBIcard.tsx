@@ -2,11 +2,6 @@ import React from "react";
 import "./OSBIcard.css";
 import OSBIfrostedBorder from "../OSBIfrostedBorder";
 
-type RGB = `rgb(${number}, ${number}, ${number})`;
-type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
-type HEX = `#${string}`;
-type Color = RGB | RGBA | HEX;
-
 interface OSBIcard {
   children: React.ReactNode;
   width?: React.CSSProperties["width"];
@@ -19,10 +14,10 @@ interface OSBIcard {
   cardName?: string;
   glow?: boolean;
   borderRadius?: string;
-  primColor?: Color;
-  secColor?: Color;
-  glowPrimColor?: Color;
-  glowSecColor?: Color;
+  primColor?: React.CSSProperties["color"];
+  secColor?: React.CSSProperties["color"];
+  glowPrimColor?: React.CSSProperties["color"];
+  glowSecColor?: React.CSSProperties["color"];
 }
 
 const OSBIcard: React.FC<OSBIcard> = ({
@@ -55,18 +50,16 @@ const OSBIcard: React.FC<OSBIcard> = ({
   };
 
   return (
-    <div className="OSBIcard">
-      <OSBIfrostedBorder
-        glow={glow}
-        glowPrimColor={glowPrimColor}
-        glowSecColor={glowSecColor}
-      >
-        <div className="OSBIcardContent" style={dynamicCardStyle}>
-          {cardName}
-          {children}
-        </div>
-      </OSBIfrostedBorder>
-    </div>
+    <OSBIfrostedBorder
+      glow={glow}
+      glowPrimColor={glowPrimColor}
+      glowSecColor={glowSecColor}
+    >
+      <div className="OSBIcard" style={dynamicCardStyle}>
+        {cardName}
+        {children}
+      </div>
+    </OSBIfrostedBorder>
   );
 };
 
